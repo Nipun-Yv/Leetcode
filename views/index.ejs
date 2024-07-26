@@ -8,6 +8,21 @@
 </head>
 <body>
     <h1>Test whether it works or not</h1>
+    <%=totalSolved%>
+    <%=easySolved%>
+    <%=mediumSolved%>
+    <%=hardSolved%>
+    <%=ranking%>
+    <%=badges%>
+    <%if(locals.contestAttend){%>
+    <%=contestAttend%>
+    <%=contestRating%>
+    <%=contestGlobalRanking%>
+    <%=totalParticipants%>
+    <%=contestTopPercentage%>
+    <%}else{%>
+        <h2>No contests attended</h2>
+    <%}%>
     <script src="/scripts/index.js" charset="UTF-8"></script>
 </body>
 </html>

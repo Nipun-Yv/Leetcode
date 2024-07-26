@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+</head>
+<body>
+    <%if(locals.err){%>
+        <h3>User with the given username does not exist</h3>
+    <%}%>
+    <form method="post" action="/profile">
+        <input type="text" placeholder="Enter your LC Username" name="username">
+        <input type="submit" val="Fetch Profile">
+    </form>
+</body>
+</html>
