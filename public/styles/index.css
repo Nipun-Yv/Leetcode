@@ -1,3 +1,64 @@
 body{
-    background-color:brown;
+    background-image:url("../images/Background.png");
+    background-size: contain;
+}
+.container{
+    display:grid;
+    width:96vw;
+    height:64.8vw;
+    margin-top:2vw;
+    margin-left:1vw;
+    margin-right:2vw;
+    grid-template-columns:1fr 0.33fr 0.66fr 0.9fr;
+    grid-template-rows:0.8fr 1fr 0.5fr 0.5fr 1fr;
+    gap:2vw;
+}
+.username{
+    grid-column:span 2;
+    background-color:pink;
+}
+.badges{
+    display:flex;
+}
+.badges>img{
+    flex:2;
+    width:0;
+}
+.badges>button{
+    flex:1;
+    background-color:rgb(57, 39, 5);
+    border-top-right-radius:12px;
+    border-bottom-right-radius:12px;
+    border:2px solid rgb(242, 133, 0);
+    border-left:1px solid rgb(255, 166, 0);
+}
+.badges>button>img{
+    border-radius:50%;
+    width:100%;
+}
+.submissions{
+    grid-row:span 5;
+    background-color:lightcoral;
+}
+.progress-bar{
+    grid-row:span 2;
+    background-color:blueviolet;
+}
+.pie-chart{
+    grid-row:span 3;
+    grid-column:span 2;
+    background-color:white;
+}
+.contest{
+    grid-row:span 2;
+    background-color:deeppink;
+}
+.ranking{
+   grid-column:span 2; 
+   background-color:purple;
+}
+.container>div{
+    background-color:antiquewhite;
+    border-radius:12px;
+    border:1px solid rgb(255, 102, 0);
 }

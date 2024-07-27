@@ -7,22 +7,32 @@
     <link href="/styles/index.css" rel="stylesheet"/>
 </head>
 <body>
-    <h1>Test whether it works or not</h1>
-    <%=totalSolved%>
-    <%=easySolved%>
-    <%=mediumSolved%>
-    <%=hardSolved%>
-    <%=ranking%>
-    <%=badges%>
-    <%if(locals.contestAttend){%>
-    <%=contestAttend%>
-    <%=contestRating%>
-    <%=contestGlobalRanking%>
-    <%=totalParticipants%>
-    <%=contestTopPercentage%>
-    <%}else{%>
-        <h2>No contests attended</h2>
-    <%}%>
+    <!--Grid main 7 divs hain, main second wale main badges daal rahan hun aur third main submissions, baaki 5 tere + login page-->
+    <div class="container">
+        <div class="username"></div>
+        
+        <div class="badges">
+            <%if(badges.length==0){%>
+            <img src="/images/not-available.png">
+            <%}else{%>
+            <%for(var i=0;i<badges.length;i++){%>
+                <img src='<%=badges[i]%>' hidden>
+            <%}}%>
+            <button><img src="/images/arrow.png"></button>
+        </div>
+
+        <div class="submissions">
+
+        </div>
+        <div class="progress-bar"></div>
+        <div class="pie-chart"></div>
+        <div class="contest"></div>
+        <div class="ranking"></div>
+    </div>
+    <script type="text/javascript">
+        var badges='<%=badges.length%>'
+        // [{id:"2847927"},{id:"2847926"}];
+    </script>
     <script src="/scripts/index.js" charset="UTF-8"></script>
 </body>
 </html>
