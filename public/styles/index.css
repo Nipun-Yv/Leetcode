@@ -29,7 +29,6 @@ body{
     background-color:rgb(33, 51, 114);
     border-top-right-radius:12px;
     border-bottom-right-radius:12px;
-    border:2px solid rgb(242, 133, 0);
     border-left:1px solid rgb(255, 166, 0);
 }
 .badges>button>img{
@@ -47,16 +46,13 @@ body{
     align-items:center;
     justify-content:center;
     height:6.6vw;
-    background-color:rgb(33, 51, 114);
+    background-image:linear-gradient(to bottom right,rgb(28, 43, 97),rgb(85, 85, 168));
     border-radius:6px;
 }
 .submissions>div{
     font-weight:700;
     color:white;
     text-align:center;
-}
-p{
-    font-size:smaller;
 }
 .progress-bar{
     grid-row:span 2;
