@@ -31,7 +31,40 @@
             <div><p><%=submissions[i]%></p></div>
             <%}%>
         </div>
-        <div class="progress-bar"></div>
+        <div class="progress-bar">
+            <div>
+                <div><h3>E</h3></div>
+                <div><h3>A</h3></div>
+                <div><h3>S</h3></div>
+                <div><h3>Y</h3></div>
+                <%for(var i=0;i<16;i++){%>
+                    <div></div>
+                <%}%>
+                <div><h3 style="color:rgb(49, 49, 141);margin-top:20%"><%=(Math.ceil(easySolved/totalSolved*100))%>%</h3></div>
+            </div>
+            <div>
+                <div><h3>M</h3></div>
+                <div><h3>E</h3></div>
+                <div><h3>D</h3></div>
+                <div><h3>I</h3></div>
+                <div><h3>U</h3></div>
+                <div><h3>M</h3></div>
+                <%for(var i=0;i<14;i++){%>
+                    <div></div>
+                <%}%>
+                <div><h3 style="color:rgb(49, 49, 141);margin-top:20%"><%=(Math.ceil(mediumSolved/totalSolved*100))%>%</h3></div>
+            </div>
+            <div>
+                <div><h3>H</h3></div>
+                <div><h3>A</h3></div>
+                <div><h3>R</h3></div>
+                <div><h3>D</h3></div>
+                <%for(var i=0;i<16;i++){%>
+                    <div></div>
+                <%}%>
+                <div><h3 style="color:rgb(49, 49, 141);margin-top:20%"><%=(Math.ceil(hardSolved/totalSolved*100))%>%</h3></div>
+            </div>
+        </div>
         <div class="pie-chart"></div>
         <div class="contest"></div>
         <div class="ranking"></div>
@@ -53,7 +86,11 @@
     <%}%>
     <script type="text/javascript">
         var badges='<%=badges.length%>'
-        // [{id:"2847927"},{id:"2847926"}];
+        var totalSolved='<%=totalSolved%>'
+        var easySolved='<%=easySolved%>'
+        console.log(easySolved)
+        var mediumSolved='<%=mediumSolved%>'
+        var hardSolved='<%=hardSolved%>'
     </script>
     <script src="/scripts/index.js" charset="UTF-8"></script>
 </body>

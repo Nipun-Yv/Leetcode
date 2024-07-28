@@ -83,6 +83,33 @@ body{
     grid-row:span 2;
     background-color:blueviolet;
 }
+.progress-bar>h3{
+    margin-left:5%;
+    margin-bottom:-1%;
+    margin-top:2%;
+}
+.progress-bar>div{
+    height:5vh;
+    display:flex;
+    width:85%;
+    margin:5%;
+    border:2px solid rgb(47, 47, 118);
+}
+.progress-bar>div>div{
+    flex:1;
+    background-color:gold;
+}
+.progress-bar>div>div:nth-child(21){
+    flex:3;
+    background-color:gold;
+}
+.progress-bar>div>div>h3{
+    /* color:gold; */
+    margin-top:50%;
+    font-family:'Roboto';
+    margin-left:10%;
+    text-align:center;
+}
 .pie-chart{
     grid-row:span 3;
     grid-column:span 2;
