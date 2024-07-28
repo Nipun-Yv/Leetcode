@@ -64,12 +64,20 @@ body{
     justify-content:center;
     height:6.6vw;
     background-image:linear-gradient(to bottom right,rgb(28, 43, 97),rgb(85, 85, 168));
-    border-radius:6px;
+    border-radius:12px;
 }
 .submissions>div{
     font-weight:700;
     color:white;
     text-align:center;
+}
+.submissions>:nth-child(1){
+    background-image:linear-gradient(to bottom right,goldenrod,gold);
+}
+.submissions h1{
+    color:rgb(47, 47, 118);
+    font-weight: 900;
+    text-shadow:none;
 }
 .progress-bar{
     grid-row:span 2;

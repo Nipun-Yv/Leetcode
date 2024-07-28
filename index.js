@@ -24,6 +24,10 @@ app.post("/profile", async(req,res)=>{
     const resultC=responseC.data;
     const responseS=await axios.get(`https://alfa-leetcode-api.onrender.com/${req.body.username}/submission`);
     const submissions=extractTitles(responseS.data);
+    // const submissions=extractTitles(t1);
+    // const badges=[];
+    // const result=0;
+    // const resultC=0;
     console.log(submissions)
     if(!resultC.contestAttend){
     res.render("index.ejs",{
