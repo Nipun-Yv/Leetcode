@@ -84,15 +84,17 @@ body{
     background-color:blueviolet;
 }
 .progress-bar>h3{
-    margin-left:5%;
+    margin-left:25%;
     margin-bottom:-1%;
     margin-top:2%;
 }
 .progress-bar>div{
-    height:5vh;
+    height:3vw;
+    border-top-right-radius:6px;
+    border-bottom-right-radius:6px;
     display:flex;
     width:85%;
-    margin:5%;
+    margin:4%;
     border:2px solid rgb(47, 47, 118);
 }
 .progress-bar>div>div{
@@ -102,13 +104,40 @@ body{
 .progress-bar>div>div:nth-child(21){
     flex:3;
     background-color:gold;
+    border-top-right-radius:6px;
+    border-bottom-right-radius:6px;
 }
 .progress-bar>div>div>h3{
-    /* color:gold; */
+    color:gold;
     margin-top:50%;
     font-family:'Roboto';
     margin-left:10%;
     text-align:center;
+}
+.progress-bar>div>div>h2{
+    color:white;
+    margin-top:5%;
+    font-family:'Roboto';
+    margin-left:0%;
+    text-align:center;
+}
+.progress-bar>.solved{
+    margin-left:5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:6vw;
+    gap:2%;
+    border:none;
+}
+.progress-bar>.solved>div{
+    flex:1;
+    height:100%;
+    background-image:linear-gradient(rgb(38, 38, 105),rgb(50, 68, 167));
+    border-radius:12px;
+}
+.progress-bar>.solved>div>h3{
+    margin:5%;
 }
 .pie-chart{
     grid-row:span 3;

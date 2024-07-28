@@ -22,8 +22,7 @@ app.post("/profile", async(req,res)=>{
     var badges=generateImgURLS(resultB.badges);
     const responseC=await axios.get(`https://alfa-leetcode-api.onrender.com/${req.body.username}/contest`);
     const resultC=responseC.data;
-    const responseS=await axios.get(`https://alfa-leetcode-api.onrender.com/${req.body.username}/submission`);
-    const submissions=extractTitles(responseS.data);
+    const submissions=extractTitles(result);
     // const submissions=extractTitles(t1);
     // const badges=[];
     // const result=0;
@@ -84,8 +83,8 @@ function generateImgURLS(badges2){
 }
 function extractTitles(t){
     var ret=[];
-    for(var i=0;i<t.submission.length && i<9;i++){
-        ret.push(t.submission[i].title);
+    for(var i=0;i<t.recentSubmissions.length && i<9;i++){
+        ret.push(t.recentSubmissions[i].title);
     }
     return ret;
 }
