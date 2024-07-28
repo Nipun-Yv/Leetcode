@@ -11,7 +11,9 @@
 <body>
     <!--Grid main 7 divs hain, main second wale main badges daal rahan hun aur third main submissions, baaki 5 tere + login page-->
     <div class="container">
-        <div class="username"></div>
+        <div class="username">
+            <h1><%=username%>.</h1>
+        </div>
         
         <div class="badges">
             <%if(badges.length==0){%>
@@ -34,6 +36,21 @@
         <div class="contest"></div>
         <div class="ranking"></div>
     </div>
+    <%=totalSolved%>
+    <%=easySolved%>
+    <%=mediumSolved%>
+    <%=hardSolved%>
+    <%=ranking%>
+    <%=badges%>
+    <%if(locals.contestAttend){%>
+    <%=contestAttend%>
+    <%=contestRating%>
+    <%=contestGlobalRanking%>
+    <%=totalParticipants%>
+    <%=contestTopPercentage%>
+    <%}else{%>
+        <h2>No contests attended</h2>
+    <%}%>
     <script type="text/javascript">
         var badges='<%=badges.length%>'
         // [{id:"2847927"},{id:"2847926"}];

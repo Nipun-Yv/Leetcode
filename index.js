@@ -22,11 +22,12 @@ app.post("/profile", async(req,res)=>{
     var badges=generateImgURLS(resultB.badges);
     const responseC=await axios.get(`https://alfa-leetcode-api.onrender.com/${req.body.username}/contest`);
     const resultC=responseC.data;
-    const responseS=await axios.get(`https://alfa-leetcode-api.onrender.com/${req.body.username}/submissions`);
+    const responseS=await axios.get(`https://alfa-leetcode-api.onrender.com/${req.body.username}/submission`);
     const submissions=extractTitles(responseS.data);
     console.log(submissions)
     if(!resultC.contestAttend){
     res.render("index.ejs",{
+        username:req.body.username,
         submissions:submissions,
         totalSolved:result.totalSolved,
         easySolved:result.easySolved,
@@ -37,6 +38,7 @@ app.post("/profile", async(req,res)=>{
     });}
     else{
         res.render("index.ejs",{
+            username:req.body.username,
             submissions:submissions,
             totalSolved:result.totalSolved,
             easySolved:result.easySolved,
