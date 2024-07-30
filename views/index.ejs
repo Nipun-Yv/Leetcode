@@ -82,9 +82,76 @@
                 </div>
             </div>
         </div>
-        <div class="pie-chart"></div>
-        <div class="contest"></div>
-        <div class="ranking"></div>
+        <div class="pie-chart max-h-[400px]  bg-gradient-to-r from-[rgb(28,43,97)] to-[rgb(85,85,168)]">
+            <section class=" min-h-full  bg-gradient-to-r from-[rgb(28,43,97)] to-[rgb(85,85,168)]" >
+                <div class="progress-bar-container  bg-gradient-to-r from-[rgb(28,43,97)] to-[rgb(85,85,168)]">
+                    <div class="circle-container">
+                        <svg class="progress-circle fill-[#000000]" viewBox="0 0 300 300" width="300" height="300" >
+                            <circle class="base-circle" cx="150" cy="150" r="140" stroke="#e2e2e2" stroke-width="10" fill="#000000"></circle>
+                            <circle class="easy-circle progress-segment" cx="150" cy="150" r="140" stroke="#64cea6" stroke-width="10" fill="#000000"></circle>
+                            <circle class="medium-circle progress-segment" cx="150" cy="150" r="140" stroke="#2b84ea" stroke-width="10" fill="#000000"></circle>
+                            <circle class="hard-circle progress-segment" cx="150" cy="150" r="140" stroke="#0b72e7" stroke-width="10" fill="#000000"></circle>
+                        </svg>
+                        <div class="circle-text text-[28px] text-amber-600" id="circle-text">
+                            <div class="total-text">All</div>
+                            <div class="total-count">69</div>
+                            <hr class="divider">
+                            <div class="total-total">3236</div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="details-container mt-2 text-[26px]">
+                        <div class="detail easy text-green-500" data-acceptance="Easy:23">
+                            <span>Easy</span>
+                            <span class="count"><%=easySolved%></span>/<span class="-ml-[30px]">814</span>
+                        </div>
+                        <div class="detail medium text-amber-500" data-acceptance="Medium:41">
+                            <span>Medium</span>
+                            <span class="count"><%=mediumSolved%></span>/<span class="-ml-[30px]">1699</span>
+                        </div>
+                        <div class="detail hard text-red-500" data-acceptance="Hard:5">
+                            <span>Hard</span>
+                            <span class="count"><%=hardSolved%></span>/<span class="-ml-[30px]">723</span>
+                        </div>
+                    </div>
+                
+            </section>
+    
+        </div>
+
+        <div class="contest z-10  bg-gradient-to-r from-[rgb(28,43,97)] to-[rgb(85,85,168)]
+        text-[rgb(255,184,6)]  mx-auto min-h-[370px] shadow-inner-[rgb(255,255,255)] max-w-[300px] left-0">
+
+        <h1 class="text-amber-600 text-center text-[40px]">Contest Data</h1>
+            <%if(locals.contestAttend){%>
+
+                <p class="mx-auto my-2 text-[25px] text-center" >Total contest : <%=contestAttend%>
+                    <br>
+                <span class="">Overall Contest 
+                    <br>Rating : <%=contestRating%></span>
+
+                <br>
+                <script>'<%=contestGlobalRanking%>' =Math.ceil('<%=contestGlobalRanking%>')</script>
+                <span>Contest ranking: <%=contestGlobalRanking%></span>
+                <br>
+                <span>Overall participants:<%=totalParticipants%></span>
+                <br>
+                <span>You stand among top <%=contestTopPercentage%> of the total coders .</span>
+            </p>
+            <%}else{%>
+                <h2 class="mx-auto text-center h-10 text-[30px] text-red-600">No contests 
+                    <br>attended</h2>
+                
+                
+            <%}%>
+
+        
+        </div> 
+        <div class="ranking  bg-gradient-to-r from-[rgb(28,43,97)] to-[rgb(85,85,168)]">
+            <h2 class="text-[30px] text-[rgb(255,184,6)] mx-20 my-10">
+            Global
+                Ranking:<%=ranking%></h2>
+        </div>
     </div>
     <%=easySubmissionsAccepted%>
     <%=mediumSubmissionsAccepted%>
