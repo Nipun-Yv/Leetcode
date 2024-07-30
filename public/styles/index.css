@@ -1,6 +1,9 @@
+
 body{
     background-image:url("../images/Backgroung.png");
     background-size: cover;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
 }
 .container{
     display:grid;
@@ -140,15 +143,18 @@ body{
     margin:5%;
 }
 .pie-chart{
+    background-color:linear-gradient(to bottom right,rgb(28, 43, 97),rgb(85, 85, 168));
     grid-row:span 3;
     grid-column:span 2;
-    background-color:white;
+    border:4px solid gold;
 }
 .contest{
+    border:4px solid gold;
     grid-row:span 2;
     background-color:deeppink;
 }
 .ranking{
+    border:4px solid gold;
    grid-column:span 2; 
    background-color:purple;
 }
@@ -156,4 +162,93 @@ body{
     background-color:rgb(255, 184, 6);
     border-radius:12px;
     border:4px solid rgb(255, 230, 6)
+}
+
+.progress-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle-container {
+    
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+    fill:rgb(16, 15, 50);
+}
+
+.progress-circle {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.base-circle {
+    fill: none;
+    stroke:"#3a2f5b";
+    stroke-width: 3;
+}
+
+.progress-segment {
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
+.easy-circle {
+    fill:#000000;
+    stroke: #a3e635;
+}
+
+.medium-circle {
+    stroke: #facc15;
+}
+
+.hard-circle {
+    stroke: #ef4444;
+}
+
+.circle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.divider {
+    margin: 5px 0;
+    border: none;
+    border-top: 1px solid #d4d4d4;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    column-gap:10px;
+    row-gap:3px;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.detail span {
+    margin: 0 2px;
+}
+.acceptance-ratio.easy {
+    color: #68D391; /* green-400 */
+}
+
+.acceptance-ratio.medium {
+    color: #F6AD55; /* amber-400 */
+}
+
+.acceptance-ratio.hard {
+    color: #FC8181; /* red-400 */
 }
