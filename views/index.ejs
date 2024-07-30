@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<%var easyAcceptancePercentage=(easySubmissionsAccepted/easySubmissionsTotal*100)%>
+<%easyAcceptancePercentage=parseFloat(easyAcceptancePercentage.toFixed(2))%>
+<%var hardAcceptancePercentage=(hardSubmissionsAccepted/hardSubmissionsTotal*100)%>
+<%hardAcceptancePercentage=parseFloat(hardAcceptancePercentage.toFixed(2))%>
+<%var mediumAcceptancePercentage=(mediumSubmissionsAccepted/mediumSubmissionsTotal*100)%>
+<%mediumAcceptancePercentage=parseFloat(mediumAcceptancePercentage.toFixed(2))%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -80,6 +86,15 @@
         <div class="contest"></div>
         <div class="ranking"></div>
     </div>
+    <%=easySubmissionsAccepted%>
+    <%=mediumSubmissionsAccepted%>
+    <%=hardSubmissionsAccepted%>
+    <%=easySubmissionsTotal%>
+    <%=mediumSubmissionsTotal%>
+    <%=hardSubmissionsTotal%>
+    <%=easyAcceptancePercentage%>
+    <%=mediumAcceptancePercentage%>
+    <%=hardAcceptancePercentage%>
     <%=totalSolved%>
     <%=easySolved%>
     <%=mediumSolved%>
