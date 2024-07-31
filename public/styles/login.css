@@ -52,7 +52,9 @@
     padding: 0.5rem;
     color:grey;
 }
-
+.username-input::placeholder {
+    color: #4B5563;
+}
 .submit-button {
     background-color: #ff66b2;
     border-radius: 5px;
