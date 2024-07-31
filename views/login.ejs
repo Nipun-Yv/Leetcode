@@ -5,14 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User</title>
     <link href="styles/login.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
-<body>
-    <%if(locals.err){%>
-        <h3>User with the given username does not exist</h3>
-    <%}%>
-    <form method="post" action="/profile">
-        <input type="text" placeholder="Enter your LC Username" name="username">
-        <input type="submit" val="Fetch Profile">
-    </form>
+<body class="bg-[url('./images/login1.jpg')]">
+    <div class="form-container flex items-center justify-center mt-[15%] max-w-[70%] mx-auto flex-col mx-auto">
+        <% if (locals.err) { %>
+            <h3 class="error-message text-[30px] text-red-400 text-center">
+                User with the given username does not exist
+            </h3>
+        <% } %>
+        <form method="post" action="/profile" class="form-content flex flex-col">
+            <input type="text" placeholder="Enter your LC Username" name="username"
+                class="username-input mt-4 min-w-[600px] min-h-[50px] text-[25px] 
+                text-white italic text-center px-2">
+            <input type="submit" val="Fetch Profile" 
+                class="submit-button border mt-4 border-solid px-auto py-3 cursor-pointer text-white text-[20px] min-w-[5rem] mx-auto hover:bg-white bg:text-rose-400">
+        </form>
+    </div>
+    
 </body>
 </html>
