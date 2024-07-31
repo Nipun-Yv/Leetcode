@@ -77,9 +77,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const circleText = document.getElementById('circle-text');
     const details = document.querySelectorAll('.detail');
 
-    const easyAcceptance = ((easyQuestions / easyTries) * 100).toFixed(2);
-    const mediumAcceptance = ((mediumQuestions / mediumTries) * 100).toFixed(2);
-    const hardAcceptance = ((hardQuestions / hardTries) * 100).toFixed(2);
+    const easyAcceptance = easySubmissionsPerc;
+    const mediumAcceptance = mediumSubmissionsPerc;
+    const hardAcceptance = hardSubmissionsPerc;
     console.log('details added')
 
     details.forEach(detail => {

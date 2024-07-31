@@ -1,3 +1,7 @@
+body{
+    background-image:url("https://i.pinimg.com/originals/44/74/1d/44741dd85d156686cff3345c7262a14e.jpg");
+    background-size:cover;
+}
 .btn-pink{
     background-color:var(--bgOrange);
     width:fit-content;
@@ -36,7 +40,7 @@
     position: relative;
     padding: 2rem;
     border-radius: 15px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(32, 70, 141, 0.3);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
 }
@@ -46,18 +50,21 @@
 }
 
 .username-input {
-    background-color: rgba(255, 192, 203, 0.7);
-    border: none;
+    background-color: rgba(72, 77, 176, 0.7);
     border-radius: 5px;
     padding: 0.5rem;
     color:grey;
 }
 .username-input::placeholder {
-    color: #4B5563;
+    color: white;
 }
 .submit-button {
-    background-color: #ff66b2;
+    background-color: rgb(31, 31, 86);
     border-radius: 5px;
+    font-weight:500;
+    /* border:7px solid gold; */
+    border:0px !important;
+    color:gold !important;
     transition: background-color 0.3s ease;
 }
 

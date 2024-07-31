@@ -14,20 +14,21 @@ app.get("/",(req,res)=>{
 })
 app.post("/profile", async(req,res)=>{
     try{
-    const response=await axios.get("https://alfa-leetcode-api.onrender.com/userProfile/"+req.body.username);
-    const result=response.data;
-    const responseB=await axios.get(`https://alfa-leetcode-api.onrender.com/${req.body.username}/badges`);
+    const response=await axios.get("http://localhost:3800/userProfile/"+req.body.username);
+    var result=response.data;
+    const responseB=await axios.get(`http://localhost:3800/${req.body.username}/badges`);
     const resultB=responseB.data;
     if(resultB.errors){throw new Error("Dudeeeee")}
     var badges=generateImgURLS(resultB.badges);
-    const responseC=await axios.get(`https://alfa-leetcode-api.onrender.com/${req.body.username}/contest`);
+    const responseC=await axios.get(`http://localhost:3800/${req.body.username}/contest`);
     const resultC=responseC.data;
     const submissions=extractTitles(result);
+    result.ranking=parseRanking(result.ranking);
+    // console.log(result.ranking)
     // const submissions=extractTitles(t1);
     // const badges=[];
-    // const result=0;
+    // // const result={matchedUserStats:[1,2,3,4]};
     // const resultC=0;
-    console.log(submissions)
     if(!resultC.contestAttend){
     res.render("index.ejs",{
         username:req.body.username,
@@ -76,7 +77,7 @@ app.post("/profile", async(req,res)=>{
 })
 function generateImgURLS(badges2){
     var map={"50 Days Badge 2024":"/images/50Days.gif","100 Days Badge 2024":"/images/100Days.webp",
-        "Jul LeetCoding Challenge":"",
+        "Jul LeetCoding Challenge":"https://assets.leetcode.com/static_assets/public/images/badges/2024/gif/2024-07.gif",
         "Jun LeetCoding Challenge":"/images/Jun.gif",
         "May LeetCoding Challenge":"/images/May.gif.jpeg",
         "Apr LeetCoding Challenge":"/images/Apr.gif",
@@ -99,4 +100,22 @@ function extractTitles(t){
         ret.push(t.recentSubmissions[i].title);
     }
     return ret;
+}
+function parseRanking(t){
+    var str="";
+    var i=0;
+    console.log(str)
+    while(t>0){
+        if(i%3==0){
+            str+=","
+        }
+    str+=(t%10).toString();
+    t=Math.floor(t/10);
+    i++;
+    }
+    var str1="";
+    for(var i=str.length-1;i>=1;i--){
+        str1+=str[i];
+    }
+    return str1;
 }

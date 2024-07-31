@@ -10,6 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Stats</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="/styles/index.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
@@ -73,16 +74,19 @@
             <div class="solved">
                 <div><h3>Easy</h3>
                     <h2><%=easySolved%></h2>
+                    <p>/814</p>
                 </div>
                 <div><h3>Medium</h3>
                     <h2><%=mediumSolved%></h2>
+                    <p>/1699</p>
                 </div>
                 <div><h3>Hard</h3>
                     <h2><%=hardSolved%></h2>
+                    <p>/723</p>
                 </div>
             </div>
         </div>
-        <div class="pie-chart max-h-[400px]  bg-gradient-to-r from-[rgb(28,43,97)] to-[rgb(85,85,168)]">
+        <div class="pie-chart   bg-gradient-to-r from-[rgb(28,43,97)] to-[rgb(85,85,168)]">
             <section class=" min-h-full  bg-gradient-to-r from-[rgb(28,43,97)] to-[rgb(85,85,168)]" >
                 <div class="progress-bar-container  bg-gradient-to-r from-[rgb(28,43,97)] to-[rgb(85,85,168)]">
                     <div class="circle-container">
@@ -120,24 +124,24 @@
         </div>
 
         <div class="contest z-10  bg-gradient-to-r from-[rgb(28,43,97)] to-[rgb(85,85,168)]
-        text-[rgb(255,184,6)]  mx-auto min-h-[370px] shadow-inner-[rgb(255,255,255)] max-w-[300px] left-0">
+        text-[rgb(255,184,6)] shadow-inner-[rgb(255,255,255)]  left-0">
 
-        <h1 class="text-amber-600 text-center text-[40px]">Contest Data</h1>
+        <h1 class="text-amber-600 text-center text-[40px]">Contests</h1>
             <%if(locals.contestAttend){%>
 
-                <p class="mx-auto my-2 text-[25px] text-center" >Total contest : <%=contestAttend%>
-                    <br>
-                <span class="">Overall Contest 
-                    <br>Rating : <%=contestRating%></span>
+                <div class="mx-auto my-2 text-[25px] text-center" >
+                   <p> Total contest : <%=contestAttend%></p>
+                   <br>
+                <p>Contest Rating : <%=contestRating%></p>
 
                 <br>
                 <script>'<%=contestGlobalRanking%>' =Math.ceil('<%=contestGlobalRanking%>')</script>
-                <span>Contest ranking: <%=contestGlobalRanking%></span>
+                <p>Contest ranking: <%=contestGlobalRanking%></p>
                 <br>
-                <span>Overall participants:<%=totalParticipants%></span>
+                <p>Overall participants:<%=totalParticipants%></p>
                 <br>
-                <span>You stand among top <%=contestTopPercentage%> of the total coders .</span>
-            </p>
+                <p>Top <%=contestTopPercentage%>% of the total coders .</>
+                </div>
             <%}else{%>
                 <h2 class="mx-auto text-center h-10 text-[30px] text-red-600">No contests 
                     <br>attended</h2>
@@ -147,10 +151,12 @@
 
         
         </div> 
-        <div class="ranking  bg-gradient-to-r from-[rgb(28,43,97)] to-[rgb(85,85,168)]">
-            <h2 class="text-[30px] text-[rgb(255,184,6)] mx-20 my-10">
-            Global
-                Ranking:<%=ranking%></h2>
+        <div class="ranking">
+            <!-- bg-gradient-to-r from-[rgb(28,43,97)] to-[rgb(85,85,168)] -->
+             <p>WORLD RANKING</p>
+             <div>            <h2>
+              <%=ranking%></h2></div>
+
         </div>
     </div>
     <%=easySubmissionsAccepted%>
@@ -184,6 +190,9 @@
         console.log(easySolved)
         var mediumSolved='<%=mediumSolved%>'
         var hardSolved='<%=hardSolved%>'
+        var easySubmissionsPerc='<%=easyAcceptancePercentage%>'
+        var mediumSubmissionsPerc='<%=mediumAcceptancePercentage%>'
+        var hardSubmissionsPerc='<%=hardAcceptancePercentage%>'
     </script>
     <script src="/scripts/index.js" charset="UTF-8"></script>
 </body>
