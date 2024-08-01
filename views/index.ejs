@@ -130,17 +130,27 @@
             <%if(locals.contestAttend){%>
 
                 <div class=" text-[25px] text-center" >
-                   <p> Total contest : <%=contestAttend%></p>
-                   <br>
-                <p>Contest Rating : <%=contestRating%></p>
-
-                <br>
-                <script>'<%=contestGlobalRanking%>' =Math.ceil('<%=contestGlobalRanking%>')</script>
-                <p>Contest ranking: <%=contestGlobalRanking%></p>
-                <br>
-                <p>Overall participants:<%=totalParticipants%></p>
-                <br>
-                <p>Top <%=contestTopPercentage%>% of the total coders .</>
+                    <script>'<%=contestGlobalRanking%>' =Math.ceil('<%=contestGlobalRanking%>')</script>
+                   <div>
+                   <div><p> Total contest</p></div><div><p> <%=contestAttend%></p></div>
+                   </div>
+                   <div>
+                   <div><p>Contest Rating</p> </div><div><p><%=contestRating%></p></div>
+                   </div>
+                   <div>
+                    <div><p>Contest ranking</p> </div><div><p><%=contestGlobalRanking%></p></div>
+                    </div>
+                    <div>
+                        <div><p>Overall participants</p> </div><div><p><%=totalParticipants%></p></div>
+                    </div>
+                <p style="background-color:white;color:gold;
+                    color: gold;
+                    text-shadow:
+                      0.5px 0.5px 0 navy,
+                      -0.5px 0.5px 0 navy,
+                      -0.5px -0.5px 0 navy,
+                      0.5px -0.5px 0 navy;
+                  ">Top <%=contestTopPercentage%>% of the total coders </p>
                 </div>
             <%}else{%>
                 <h2 class="mx-auto text-center h-10 text-[30px] text-red-600">No contests 

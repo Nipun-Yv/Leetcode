@@ -166,32 +166,63 @@ body{
     /* border:none!important; */
     grid-row:span 2;
     margin-right:0 !important;
-    background-color:deeppink;
+    background-image:linear-gradient(rgb(33, 33, 122),rgb(33, 33, 122))!important;
 }
 .contest>h1{
-    color:white;
+    color:navy;
+    font-weight:600;
     font-size:2.5rem;
+    border-bottom:2px solid white;
     text-shadow:2px 2px rgb(255, 191, 0);
+    background-color:rgb(255, 191, 0);
+    border-radius:6px;
 }
-.contest>div{
-    background-color:white;
-    padding:1.8%;
+.contest>div>div{
+    display:flex;
+    background-color:navy
+    /* padding:1.8%;
     padding-top:9%;
     margin-left:2%;
     margin-right:2%;
     border-radius:6px;
-    height:21vw;
+    height:21vw; */
 }
-.contest>div>p{
-    color:navy!important;
-    font-weight:800;
-    width:26vw;
+.contest>div{
+    /* padding:1.8%;
+    padding-top:9%;
+    margin-left:2%;
+    margin-right:2%;
+    border-radius:6px;
+    height:21vw; */
+    margin:2%;
+}
+.contest>div p{
+    font-weight:600;
+    width:100%;
     /* margin-left:1%;
     margin-right:1%; */
-    margin-top:-8%;
     padding:2%;
     border-radius:6px;
-    background-color:rgb(255, 191, 0)!important;
+    /* background-color:rgb(255, 191, 0)!important; */
+    color:rgb(255, 191, 0);
+    text-shadow:1px 1px black;
+}
+.contest>div>div>:nth-child(1){
+    flex:2;
+    background-color:rgb(23, 23, 116);
+    /* border:0.5px solid gold; */
+    border-left:none;
+    border-right:none;
+    /* padding:10%; */
+}
+.contest>div>div>:nth-child(2){
+    border:2px solid navy;
+    border-radius:12px;
+    background-color:rgb(255, 204, 0);
+    flex:1;
+}
+.contest>div>div>:nth-child(2)>p{
+    color:navy;
 }
 .ranking{
    border:4px solid rgb(255, 204, 0);

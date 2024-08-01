@@ -20,9 +20,11 @@ app.post("/profile", async(req,res)=>{
     const resultB=responseB.data;
     if(resultB.errors){throw new Error("Dudeeeee")}
     var badges=generateImgURLS(resultB.badges);
+    console.log("Hello")
     const responseC=await axios.get(`http://localhost:3800/${req.body.username}/contest`);
     const resultC=responseC.data;
     const submissions=extractTitles(result);
+    console.log(result.recentSubmissions)
     result.ranking=parseRanking(result.ranking);
     // console.log(result.ranking)
     // const submissions=extractTitles(t1);
