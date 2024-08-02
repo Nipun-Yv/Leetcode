@@ -281,28 +281,31 @@ body{
 }
 
 .base-circle {
-    fill: none;
+    fill: goldenrod;
     stroke:"#3a2f5b";
-    stroke-width: 3;
+    stroke-width: 10;
 }
 
 .progress-segment {
     fill: none;
-    stroke-width: 3;
+    stroke-width: 10;
     stroke-linecap: round;
 }
 
 .easy-circle {
-    fill:#000000;
+    fill:goldenrod;
     stroke: #a3e635;
+    stroke-width:5;
 }
 
 .medium-circle {
     stroke: #facc15;
+    stroke-width:5;
 }
 
 .hard-circle {
     stroke: #ef4444;
+    stroke-width:5;
 }
 
 .circle-text {
@@ -311,12 +314,14 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    /* text-shadow: 2.5px 2.5px whitesmoke; */
+
 }
 
 .divider {
     margin: 5px 0;
     border: none;
-    border-top: 1px solid #d4d4d4;
+    border-top: 1px solid white;
 }
 
 .details-container {
@@ -326,24 +331,28 @@ body{
     row-gap:3px;
 }
 
-.detail {
+/* .detail {
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-}
+} */
 
-.detail span {
+/* .detail span {
     margin: 0 2px;
-}
+} */
 .acceptance-ratio.easy {
-    color: #68D391; /* green-400 */
+    color:#213372; /* green-800 */
+    /* text-shadow: 2.5px 2.5px darkgreen; */
 }
 
 .acceptance-ratio.medium {
-    color: #F6AD55; /* amber-400 */
+    color:#213372; /* amber-800 */
+    /* text-shadow: 2.5px 2.5px deepskyblue; */
 }
 
 .acceptance-ratio.hard {
-    color: #FC8181; /* red-400 */
+    color: #213372;/* red-800 */
+    /* text-shadow: 2.5px 2.5px darkred; */
 }
+
