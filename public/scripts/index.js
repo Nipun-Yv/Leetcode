@@ -45,76 +45,94 @@ for(;q<=4;q++){
 
 // JS code for pie-chart section
 document.addEventListener("DOMContentLoaded", function() {
-    console.log('dom loaded');
-    const totalQuestions =Number(totalSolved);
-    const totalSubmissions = 3236;
-    const easyQuestions =Number(easySolved) ;
-    const mediumQuestions = mediumSolved;
-    const hardQuestions = hardSolved;
-    console.log(totalSolved,easySolved,mediumSolved,hardSolved);
-    const easyTries = 67;
-    const mediumTries = 100;
-    const hardTries = 50;
+        const totalQuestions =Number(totalSolved);
+        const totalSubmissions = 3236;
+        const easyQuestions =Number(easySolved) ;
+        const mediumQuestions =Number(mediumSolved);
+        const hardQuestions = Number(hardSolved);
+        const easyAcceptance =Number(easySubmissionsPerc);
+        const mediumAcceptance=Number(mediumSubmissionsPerc);
+        const hardAcceptance=Number(hardSubmissionsPerc);
 
-    document.querySelector('.total-count').textContent = totalQuestions;
+
+    const easyPercentage = (easySolved / 814) * 100;
+    const mediumPercentage = (mediumSolved / 1699) * 100;
+    const hardPercentage = (hardSolved / 723) * 100;
+
+    document.querySelector('.total-count').textContent = totalSolved;
     document.querySelector('.total-total').textContent = totalSubmissions;
-    
-    document.querySelector('.easy .count').textContent = easyQuestions;
-    document.querySelector('.medium .count').textContent = mediumQuestions;
-    document.querySelector('.hard .count').textContent = hardQuestions;
 
-    const total = 814 + 1699 + 723;
-    const easyPercentage = (easyQuestions / total) * 100;
-    const mediumPercentage = (mediumQuestions / total) * 100;
-    const hardPercentage = (hardQuestions / total) * 100;
-    
-    document.querySelector('.easy-circle').style.strokeDasharray = `${easyPercentage} ${100 - easyPercentage}`;
-    document.querySelector('.medium-circle').style.strokeDasharray = `${mediumPercentage} ${100 - mediumPercentage}`;
-    document.querySelector('.medium-circle').style.strokeDashoffset = `-${easyPercentage}`;
-    document.querySelector('.hard-circle').style.strokeDasharray = `${hardPercentage} ${100 - hardPercentage}`;
-    document.querySelector('.hard-circle').style.strokeDashoffset = `-${easyPercentage + mediumPercentage}`;
+    document.querySelector('.easy .count').textContent = easySolved;
+    document.querySelector('.medium .count').textContent = mediumSolved;
+    document.querySelector('.hard .count').textContent = hardSolved;
+
+    function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+        const angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
+        return {
+            x: centerX + (radius * Math.cos(angleInRadians)),
+            y: centerY + (radius * Math.sin(angleInRadians))
+        };
+    }
+
+    function describeArc(x, y, radius, startAngle, endAngle) {
+        const start = polarToCartesian(x, y, radius, endAngle);
+        const end = polarToCartesian(x, y, radius, startAngle);
+        const largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
+        return [
+            "M", start.x, start.y,
+            "A", radius, radius, 0, largeArcFlag, 0, end.x, end.y
+        ].join(" ");
+    }
+
+    function setProgress(arc, radius, startPercentage, endPercentage) {
+        const startAngle = startPercentage / 100 * 360;
+        const endAngle = endPercentage / 100 * 360;
+        const arcPath = describeArc(200, 200, radius, startAngle, endAngle);
+        arc.setAttribute("d", arcPath);
+    }
+
+    const easyArc = document.querySelector(".easy-arc");
+    const mediumArc = document.querySelector(".medium-arc");
+    const hardArc = document.querySelector(".hard-arc");
+
+    setProgress(easyArc, 180, 0, easyPercentage);
+    setProgress(mediumArc, 180, easyPercentage, easyPercentage + mediumPercentage);
+    setProgress(hardArc, 180, easyPercentage + mediumPercentage, easyPercentage + mediumPercentage + hardPercentage);
 
     const circleText = document.getElementById('circle-text');
     const details = document.querySelectorAll('.detail');
-
-    const easyAcceptance = easySubmissionsPerc;
-    const mediumAcceptance = mediumSubmissionsPerc;
-    const hardAcceptance = hardSubmissionsPerc;
-    console.log('details added')
 
     details.forEach(detail => {
         detail.addEventListener('mouseover', function() {
             const difficulty = detail.getAttribute('data-acceptance').split(':')[0].toLowerCase();
             let acceptanceRatio = '';
             let difficultyClass = '';
-    
+
             switch (difficulty) {
                 case 'easy':
-                    acceptanceRatio = `Acceptance Ratio ${easyAcceptance}%`;
+                    acceptanceRatio = `Acceptance Ratio ${(easyAcceptance).toFixed(2)}%`;
                     difficultyClass = 'easy';
                     break;
                 case 'medium':
-                    acceptanceRatio = `Acceptance Ratio ${mediumAcceptance}%`;
+                    acceptanceRatio = `Acceptance Ratio ${(mediumAcceptance).toFixed(2)}%`;
                     difficultyClass = 'medium';
                     break;
                 case 'hard':
-                    acceptanceRatio = `Acceptance Ratio ${hardAcceptance}%`;
+                    acceptanceRatio = `Acceptance Ratio ${(hardAcceptance).toFixed(2)}%`;
                     difficultyClass = 'hard';
                     break;
             }
-    
+
             circleText.innerHTML = `<div class="acceptance-ratio ${difficultyClass}">${acceptanceRatio}</div>`;
-       
-    });
+        });
 
         detail.addEventListener('mouseout', function() {
             circleText.innerHTML = `
                 <div class="total-text">All</div>
-                <div class="total-count">${totalQuestions}</div>
+                <div class="total-count">${totalSolved}</div>
                 <hr class="divider">
                 <div class="total-total">${totalSubmissions}</div>
             `;
         });
     });
 });
-
