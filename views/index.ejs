@@ -86,35 +86,36 @@
                 </div>
             </div>
         </div>
-        <div class="pie-chart bg-gradient-to-r from-[rgb(28,43,97)] to-[rgb(85,85,168)]">
-            <section class="min-h-full bg-gradient-to-r from-[rgb(28,43,97)] to-[rgb(85,85,168)]">
-                <div class="progress-bar-container bg-gradient-to-r from-[rgb(28,43,97)] to-[rgb(85,85,168)]">
-                    <div class="circle-container">
-                        <svg class="progress-circle" viewBox="0 0 400 400" width="400" height="400">
-                            <circle class="base-circle" cx="200" cy="200" r="180" stroke="white" stroke-width="20" fill="none"></circle>
+        <div class="pie-chart ">
+            <section class="min-h-full ">
+                <div class="progress-bar-container]">
+                    <div class="circle-container mx-auto">
+                        <svg class="progress-circle mx-auto mt-5
+                        " viewBox="0 0 400 400" width="400" height="400">
+                            <circle class="base-circle" cx="200" cy="200" r="200" stroke="white" stroke-width="20" fill="none"></circle>
                             <path class="easy-arc" fill="none" stroke="green" stroke-width="10"></path>
                             <path class="medium-arc" fill="none" stroke="yellow" stroke-width="10"></path>
                             <path class="hard-arc" fill="none" stroke="red" stroke-width="10"></path>
                         </svg>
-                        <div class="circle-text text-[22px] text-[#213372] font-extrabold" id="circle-text">
-                            <div class="total-text">All</div>
+                        <div class="circle-text text-[22px] text-[rgb(255,215,0)] font-extrabold" id="circle-text">
+                            <div class="total-text">Solved</div>
                             <div class="total-count"><%=totalSolved%></div>
                             <hr class="divider h-[2px]">
                             <div class="total-total">3236</div>
                         </div>
                     </div>
                 </div>
-                <div class="details-container mt-2 text-[26px] bg-[#DAA520] py-3 mx-2 rounded-sm
-                font-extrabold flex justify-between items-center">
-                    <div class="detail easy text-[#213372]" data-acceptance="Easy:23">
+                <div class="details-container mt-16 text-[26px] bg-[#213372] py-3 mx-2 rounded-sm
+                font-extrabold flex justify-between items-center" style="border-radius:6px">
+                    <div class="detail easy text-[rgb(255,215,0)]" data-acceptance="Easy:23">
                         <span class="">Easy : </span>
                         <span class="count"><%=easySolved%></span><span class="">/814</span>
                     </div>
-                    <div class="detail medium text-[#213372]" data-acceptance="Medium:41">
+                    <div class="detail medium text-[rgb(255,215,0)]" data-acceptance="Medium:41">
                         <span class="">Medium : </span>
                         <span class="count"><%=mediumSolved%></span>/<span class="">1699</span>
                     </div>
-                    <div class="detail hard text-[#213372]"  data-acceptance="Hard:5">
+                    <div class="detail hard text-[rgb(255,215,0)]"  data-acceptance="Hard:5">
                         <span class="">Hard : </span>
                         <span class="count"><%=hardSolved%></span>/<span class="">723</span>
                     </div>
