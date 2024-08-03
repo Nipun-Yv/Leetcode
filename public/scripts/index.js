@@ -55,9 +55,9 @@ document.addEventListener("DOMContentLoaded", function() {
         const hardAcceptance=Number(hardSubmissionsPerc);
 
 
-    const easyPercentage = (easySolved / 814) * 100;
-    const mediumPercentage = (mediumSolved / 1699) * 100;
-    const hardPercentage = (hardSolved / 723) * 100;
+    const easyPercentage = (easySolved / 3236) * 100;
+    const mediumPercentage = (mediumSolved / 3236) * 100;
+    const hardPercentage = (hardSolved / 3236) * 100;
 
     document.querySelector('.total-count').textContent = totalSolved;
     document.querySelector('.total-total').textContent = totalSubmissions;
